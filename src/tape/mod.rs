@@ -15,11 +15,12 @@ impl Tape {
         new_tape
     }
 
-    // Get the value of the cell that the head is looking at 
+    // Gets the value of the cell that the head is looking at 
     pub fn get(&self) -> bool {
         self.tape[self.index]
     }
 
+    // Sets the value of the current cell
     pub fn set(&mut self, val: bool) {
         self.tape[self.index] = val;
     }
@@ -66,6 +67,7 @@ impl Tape {
         println!();
     }
 
+    // Resets the tape
     pub fn reset(&mut self) {
         self.tape = Vec::new();
         self.tape.push(false);

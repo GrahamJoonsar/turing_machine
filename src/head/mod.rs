@@ -35,6 +35,7 @@ impl <'a> Head <'a> {
         self.state != HALT
     }
 
+    // Sets the state of the head
     pub fn set_state(&mut self, state: char) {
         self.state = state;
     }

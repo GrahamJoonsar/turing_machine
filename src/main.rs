@@ -33,6 +33,7 @@ fn main() {
     for _ in 0..5 { tp.move_right(); }
     for _ in 0..2 { tp.move_left(); }
 
+    // Main loop
     tp.display();
     while hd.operate(&mut tp) {
         tp.display();
