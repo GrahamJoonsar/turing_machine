@@ -33,8 +33,8 @@ fn main() {
     for _ in 0..5 { tp.move_right(); }
     for _ in 0..2 { tp.move_left(); }
 
-    for _ in 0..12 {
-        hd.operate(&mut tp);
+    tp.display();
+    while hd.operate(&mut tp) {
         tp.display();
     }
 }

@@ -22,7 +22,8 @@ impl <'a> Head <'a> {
         }
     }
 
-    pub fn operate(&mut self, tp: &mut tape::Tape) {
+    // Operates on the tape, returns false once Halted
+    pub fn operate(&mut self, tp: &mut tape::Tape) -> bool {
         let (dir, new_state, new_symbol) = (self.decider)(self.state, tp.get());
         self.state = new_state;
         tp.set(new_symbol);
@@ -31,5 +32,10 @@ impl <'a> Head <'a> {
             Direction::Right => tp.move_right(),
             Direction::Nothing => (),
         }
+        self.state != HALT
+    }
+
+    pub fn set_state(&mut self, state: char) {
+        self.state = state;
     }
 }

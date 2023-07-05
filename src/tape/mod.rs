@@ -65,4 +65,10 @@ impl Tape {
         }
         println!();
     }
+
+    pub fn reset(&mut self) {
+        self.tape = Vec::new();
+        self.tape.push(false);
+        self.index = 0;
+    }
 }
